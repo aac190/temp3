@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- title -->
+    <title>Eating out</title>
+
+    <!-- JS -->
+    <script src="dist/js/leaflet.js"></script>
+    <script src="dist/js/jquery.min.js"></script>
+   
+    
+      <!-- CSS -->
+    <link href="dist/css/leaflet.css" rel="stylesheet">
+    <link href="dist/css/base.css" rel="stylesheet">
+       <link href="dist/css/map.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla&family=Pacifico&display=swap" rel="stylesheet">
+
+</head>    
+    
+    
+  <body>
+    <div class="container" onclick="menuicon(this)" id="toggle">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+ <div id="map"></div>
+      <div id = 'in'>+</div>
+    <div id = 'out'>-</div> 
+      
+<div id="Absinfobox">
+    <h5><span id="absCH"></span><br><span id="absNCH"></span></h5></div>
+      
+<div id="Realinfobox">
+    <h5><span id="HotName"></span><br><span id="absNCH"></span></h5></div>      
+            
+    <div id="sidebar-wrapper">
+
+        <div class="infotop">
+            <h1>Eating out in <br>Barcelona</h1>
+            <h2>A comparison between<br> chains and local <br>restaurants and bars</h2>
+            <p><span class="dot" style="background-color: black"></span>Restaurant and bars chains</p>
+            <p><span class="dot" style="background-color: #5ebfbf"></span>Local restaurants and bars</p>
+             <p><span class="dot" style="background-color: #3f8282"></span>Both chains and local</p>
+            <p><span class="dot" style="background-color: #f7f701"></span>Hotspot areas of chains</p>
+            
+  
+        </div>
+        <div class="infobot">
+            <div class="legend"></div>
+            <h3>Data source: Economic activities census on the grounf floor of the city of Barcelona. 2019</h3>
+        </div>
+      </div>
+      
+
+<script>
+$("#toggle").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("toggled");
+});
+
+function menuicon(x) {
+    var mq = window.matchMedia("(min-width: 768px)");
+    if (mq.matches) {
+        x.classList.toggle("back");
+    } else {
+        x.classList.toggle("change");
+    }
+}</script>        
+        
+</body>  
+    
+    
+
+    
+    <footer>
+  
+    <!-- Les capes de JSON -->
+    <script src="dist/layer/abstract2019.js"></script>
+         <script src="dist/layer/CH2019reality.js"></script>
+        <script src="dist/layer/NCH2019reality.js"></script>
+        <script src="dist/layer/heatline.js"></script>
+    <script src="dist/js/map.js"></script>
+  </footer>
+
+</html>
